@@ -18,7 +18,6 @@ class CanvasBot:
 
             assignments.append((assignment.assignment['name'], due_date, url))
 
-        print(assignments)
         return assignments
 
 
