@@ -1,6 +1,5 @@
 from canvasapi import Canvas
-import datetime
-from datetime import date
+
 class CanvasBot:
     def __init__(self, url, key) -> None:
         self.canvas = Canvas(url, key)
