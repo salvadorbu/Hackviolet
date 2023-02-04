@@ -31,6 +31,6 @@ if __name__ == "__main__":
     url = "https://canvas.vt.edu"
     key = "4511~CSBkFbb31upwYZYNHWfENaVnF0xOdXbGPl9Kr55rDC5M4y3hr0QMx8wkvbLHQIxs"
     bot = CanvasBot(url, key)
-    file = open("C:\\Users\\salva\\Downloads\\submission.pdf", "r")
+    file = open("C:\\Users\\salva\\Downloads\\submission.pdf", mode="rb")
     ass = bot.get_assignements()
     bot.submit_assignment(167776, 1690075, file)
