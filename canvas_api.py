@@ -10,15 +10,18 @@ class CanvasBot:
     
     def get_courses(self):
         courses = self.canvas.get_courses()._get_next_page()
-        for i in courses:
+        l = []
+        for c in courses:
             try:
-                print(i)
+                l.append(c.name)
             except:
                 pass
-            
+        return l
 
 if __name__ == "__main__":
     url = "https://canvas.vt.edu"
     key = "4511~CSBkFbb31upwYZYNHWfENaVnF0xOdXbGPl9Kr55rDC5M4y3hr0QMx8wkvbLHQIxs"
     bot = CanvasBot(url, key)
-    print(bot.get_courses())
+    l = bot.get_courses()
+    for i in l:
+        print(i)
