@@ -8,13 +8,8 @@ class CanvasBot:
     def get_user(self):
         return self.user
     
-    def get_courses(self):
-        courses = self.canvas.get_courses()._get_next_page()
-        for i in courses:
-            try:
-                print(i)
-            except:
-                pass
+    def _get_courses(self):
+        return self.canvas.get_courses()._get_next_page()
             
 
 if __name__ == "__main__":
