@@ -16,5 +16,6 @@ A discord bot that links to canvas account.
 
 #FEATURES
 - REMINDS due date from CALENDAAR
+- Redirects to exact assignment page
 
 
