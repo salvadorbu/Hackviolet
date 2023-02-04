@@ -2,8 +2,8 @@
 
 A discord bot that links to canvas account. 
 
-https://canvasapi.readthedocs.io/en/stable/getting-started.html
-https://discord.com/developers/docs/intro
+- https://canvasapi.readthedocs.io/en/stable/getting-started.html
+- https://discord.com/developers/docs/intro
 
 #TODO
 - [ ] Setup canvas api
