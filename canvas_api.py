@@ -33,8 +33,17 @@ class CanvasBot:
         
 
     def get_assignements(self):
-        assignments = self.canvas.get_todo_items()._get_next_page()
-        
+        assignments = []
+        for assignment in self.canvas.get_todo_items()._get_next_page():
+            due_date = str(assignment.assignment['due_at'])
+            due_date = f"{due_date[5:7]}/{due_date[8:10]}"
+
+            url = assignment.assignment['html_url']
+
+            assignments.append((assignment.assignment['name'], due_date, url))
+
+        print(assignments)
+        return assignments
 
 
 if __name__ == "__main__":
