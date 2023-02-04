@@ -7,30 +7,7 @@ class CanvasBot:
         self.user = self.canvas.get_current_user()
 
     def get_user(self):
-        return self.user
-
-    def is_current_semester(self, created_date):
-        year = st[0:4]
-        month = st[5:7]
-        semester = ""
-
-        if month == ("06" or "07"):
-          semester = "Fall"
-        else:
-            semester = "Spring"
-            year = str(int(year))
-        return self.sem_to_string(str(date.today())) == self.sem_to_string(created_date)
-    
-    def get_courses(self):
-        paginated = self.user.get_courses()._get_next_page()
-        courses = []
-        for p in paginated:
-            try:
-                courses.append((str(p.created_at_date), p.id))
-            except:
-                pass
-        return courses
-        
+        return self.user        
 
     def get_assignements(self):
         assignments = []
