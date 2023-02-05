@@ -9,14 +9,21 @@ class CanvasBot:
         return self.user
     
     def get_courses(self):
-        courses = self.canvas.get_courses()._get_next_page()
-        l = []
-        for c in courses:
-            try:
-                l.append(c.name)
-            except:
-                pass
-        return l
+        assignments = []
+        for assignment in self.canvas.get_todo_items()._get_next_page():
+            due_date = str(assignment.assignment['due_at'])
+            due_date = f"{due_date[5:7]}/{due_date[8:10]}"
+
+            url = assignment.assignment['html_url']
+
+            assignments.append((assignment.assignment['name'], due_date, url))
+
+        return assignments
+    
+    def submit_assignment(self, course_id, assignment_id, submit_file):
+        course = self.canvas.get_course(course_id)
+        assignment = course.get_assignment(assignment_id)
+        assignment.submit({"submission_type": "online_upload"}, file=submit_file)
 
 if __name__ == "__main__":
     url = "https://canvas.vt.edu"
@@ -24,4 +31,7 @@ if __name__ == "__main__":
     bot = CanvasBot(url, key)
     l = bot.get_courses()
     for i in l:
-        print(i)
+        string = ""
+        for j in range(len(i)):
+            string += i[j] + " "
+        print(f"{string}")
