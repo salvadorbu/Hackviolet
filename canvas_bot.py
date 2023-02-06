@@ -100,4 +100,4 @@ async def submit(ctx):
 async def shutdown(ctx):
     await ctx.bot.close()
     
-bot.run(TOKEN)
+bot.run(TOKEN
