@@ -32,5 +32,5 @@ if __name__ == "__main__":
     bot = CanvasBot(url, key)
     ass = bot.get_assignements()
     for a in ass:
-        print(a
+        print(a)
 '''
